@@ -1,12 +1,28 @@
-import SideBar from "./components/SideBar";
-import TopNavigation from "./components/TopNavigation";
+import { Route, Switch } from "react-router";
+
+import Layout from "./components/Layout";
+
+import AllMeetups from "./pages/AllMeetups";
+import NewMeetup from "./pages/NewMeetup";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
-    <div className="flex">
-      <SideBar />
-      <TopNavigation />
-    </div>
+    <Layout>
+      <Switch>
+        <Route path="/" exact={true}>
+          <AllMeetups />
+        </Route>
+
+        <Route path="/new">
+          <NewMeetup />
+        </Route>
+
+        <Route path="/favorites">
+          <Favorites />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
