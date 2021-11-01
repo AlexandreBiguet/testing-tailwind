@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer components {
+  .sidebar {
+    @apply fixed top-0 left-0 h-screen w-16 m-0 flex flex-col 
+          bg-gray-900 text-white shadow-lg;
+  }
+
   .sidebar-icon {
-    @apply relative flex items-center justify-center 
+    @apply flex items-center justify-center 
            h-12 w-12 mt-2 mb-2 mx-auto
            bg-gray-800 text-green-500
            hover:bg-green-300 hover:text-white
@@ -22,14 +27,12 @@
   .top-navigation {
     @apply flex flex-row items-center justify-evenly 
     bg-gray-300 dark:bg-gray-700 bg-opacity-90 
-    w-full h-16 
-    m-0 
-    shadow-lg;
+    w-screen h-16 fixed;
   }
 
   .top-navigation-icon {
     @apply text-gray-500
-    mr-3 ml-4
+    mr-2 ml-4
     transition duration-300 ease-in-out 
     hover:text-pink-400 
     cursor-pointer;
@@ -39,14 +42,9 @@
     @apply ml-auto mr-4;
   }
 
-  .title-hashtag {
-    @apply text-lg tracking-wider font-semibold text-gray-500 
-    ml-24 my-auto;
-  }
-
   .title-text {
     @apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 
-    mr-auto ml-3 my-auto 
+    mr-auto ml-32 my-auto 
     transition duration-300 ease-in-out;
   }
 
@@ -64,5 +62,18 @@
     bg-transparent outline-none 
     text-gray-500  placeholder-gray-500
     pl-1 rounded;
+  }
+
+  .meetup-list {
+    @apply mt-36 ml-44 mr-16 flex flex-row p-12;
+  }
+
+  .meetup {
+    @apply grid h-80 w-44 bg-green-300 rounded-md shadow-2xl
+    hover:-translate-y-6
+    peer-hover:translate-x-5
+    peer-first:-ml-4
+    after:translate-x-3
+    transition duration-300;
   }
 }

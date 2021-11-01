@@ -1,14 +1,5 @@
-import SideBar from "./SideBar";
-import TopNavigation from "./TopNavigation";
-
 const Layout = (props) => {
-  return (
-    <div className="flex">
-      <SideBar />
-      <TopNavigation />
-      {props.children}
-    </div>
-  );
+  return <div className="grid">{props.children}</div>;
 };
 
 export default Layout;

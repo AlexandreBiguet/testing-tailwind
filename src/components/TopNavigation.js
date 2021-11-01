@@ -8,13 +8,23 @@ import {
 } from "react-icons/fa";
 import useDarkMode from "../hooks/useDarkMode";
 
-const TopNavigation = () => {
+const TopNavigation = (props) => {
+  if (props.searchable) {
+    return (
+      <div className="top-navigation">
+        <Title text={props.title} />
+        <ThemeIcon />
+        <Search />
+        <BellIcon />
+        <UserCircle />
+      </div>
+    );
+  }
+
   return (
     <div className="top-navigation">
-      <HashtagIcon />
-      <Title />
+      <Title text={props.title} />
       <ThemeIcon />
-      <Search />
       <BellIcon />
       <UserCircle />
     </div>
@@ -45,7 +55,7 @@ const BellIcon = () => <FaRegBell size="24" className="top-navigation-icon" />;
 const UserCircle = () => (
   <FaUserCircle size="24" className="top-navigation-icon" />
 );
-const HashtagIcon = () => <FaHashtag size="20" className="title-hashtag" />;
-const Title = () => <h5 className="title-text">Some title here</h5>;
+
+const Title = (props) => <h5 className="title-text">{props.text}</h5>;
 
 export default TopNavigation;
