@@ -1,5 +1,5 @@
 const Layout = (props) => {
-  return <div className="grid">{props.children}</div>;
+  return <div>{props.children}</div>;
 };
 
 export default Layout;

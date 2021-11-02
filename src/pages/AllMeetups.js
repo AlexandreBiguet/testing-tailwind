@@ -37,13 +37,13 @@ var MEETUP_DATA = [
 
 const AllMeetups = () => {
   return (
-    <div>
+    <>
       <TopNavigation title="All Meetups" searchable={true} />
       <SideBar />
       <div className="overscroll-auto">
         <MeetupList meetups={MEETUP_DATA} />
       </div>
-    </div>
+    </>
   );
 };
 
